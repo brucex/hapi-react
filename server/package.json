@@ -1,0 +1,14 @@
+{
+  "name": "hapi-gateway",
+  "version": "1.0.0",
+  "description": "server for example project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "bruce xu",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.0"
+  }
+}
