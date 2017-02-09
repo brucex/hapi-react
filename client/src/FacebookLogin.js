@@ -4,11 +4,19 @@ import FacebookLogin from 'react-facebook-login';
 class Login extends React.Component {
     constructor(props) {
         super(props);
+        this.responseFacebook = this.responseFacebook.bind(this)
     };
 
     responseFacebook = (response) => {
-        console.log(response);
+        if(response.accessToken){
+            localStorage.setItem('fbAccessToken', response.accessToken);
+            console.log(response);
+        }
+        else {
+            console.log(response);
+        }
     };
+
     render() {
         return (
             <FacebookLogin
@@ -16,6 +24,8 @@ class Login extends React.Component {
                 autoLoad={true}
                 fields="name,email,picture"
                 textButton="fb login"
+                //onClick={componentClicked}
+                callback={this.responseFacebook}
             />
         )
     }
