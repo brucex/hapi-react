@@ -1,5 +1,6 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
+import {browserHistory} from 'react-router';
 
 class Login extends React.Component {
     constructor(props) {
@@ -10,10 +11,10 @@ class Login extends React.Component {
     responseFacebook = (response) => {
         if(response.accessToken){
             localStorage.setItem('fbAccessToken', response.accessToken);
-            console.log(response);
+            browserHistory.push('/');
         }
         else {
-            console.log(response);
+            browserHistory.push('/');
         }
     };
 
