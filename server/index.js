@@ -4,7 +4,7 @@ const Hapi = require('hapi');
 const Routes = require('./routes');
 
 const server = new Hapi.Server();
-server.connection({ port: 3000, host: 'localhost' });
+server.connection({ port: 5000, host: 'localhost' });
 
 //register routes
 server.route(Routes);
